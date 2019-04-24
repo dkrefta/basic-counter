@@ -16,6 +16,11 @@ export default class Counter extends Component {
       count: this.state.count - 1
     });
   }
+  reset = () => {
+    this.setState({
+      count: 0
+    })
+  }
 
   render() {
     const { count } = this.state;
@@ -28,7 +33,7 @@ export default class Counter extends Component {
         <button onClick={this.handleDecrement} className="full-width">
           Decrement
         </button>
-        <button onClick={() => {}} className="full-width">
+        <button onClick={this.reset} className="full-width">
           Reset
         </button>
       </section>
